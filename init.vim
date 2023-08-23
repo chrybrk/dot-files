@@ -109,8 +109,7 @@ hi Search guibg=#b16286 guifg=#ebdbb2 gui=NONE          " search string highligh
 hi NonText guifg=bg                                     " mask ~ on empty lines
 hi clear CursorLineNr                                   " use the theme color for relative number
 hi CursorLineNr gui=bold                                " make relative number bold
-hi SpellBad guifg=NONE gui=bold,undercurl               " misspelled words
-
+hi SpellBad guifg=NONE gui=bold,undercurl               " misspelled wNNERDTreeToggle
 
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1

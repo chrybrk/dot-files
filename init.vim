@@ -24,7 +24,7 @@ set encoding=utf-8                                      " text encoding
 set number                                              " enable numbers on the left
 set relativenumber                                      " current line is 0
 set title                                               " tab title as file name
-set noshowmode                                          " dont show current mode below statusline
+set showmode                                            " dont show current mode below statusline
 set noshowcmd                                           " to get rid of display of last command
 set conceallevel=2                                      " set this so we wont break indentation plugin
 set splitright                                          " open vertical split to the right
@@ -58,8 +58,8 @@ set updatetime=300
 set shortmess+=c
 set signcolumn=yes
 
-autocmd BufRead,BufNewFile *.hl set filetype=c
-autocmd BufRead,BufNewFile *.chry set filetype=c
+" autocmd BufRead,BufNewFile *.hl set filetype=c
+" autocmd BufRead,BufNewFile *.chry set filetype=c
 
 call plug#begin("~/.vim/plugged")
  " Plugin Section
@@ -86,6 +86,8 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'shirk/vim-gas'
 Plug 'davidosomething/vim-colors-meh'
 Plug 'nanotech/jellybeans.vim'
+Plug 'tikhomirov/vim-glsl'
+Plug 'mattn/emmet-vim'
 call plug#end()
 
 
@@ -111,14 +113,14 @@ hi clear CursorLineNr                                   " use the theme color fo
 hi CursorLineNr gui=bold                                " make relative number bold
 hi SpellBad guifg=NONE gui=bold,undercurl               " misspelled wNNERDTreeToggle
 
-let g:cpp_class_scope_highlight = 1
-let g:cpp_member_variable_highlight = 1
-let g:cpp_class_decl_highlight = 1
-let g:cpp_posix_standard = 1
-let g:cpp_experimental_simple_template_highlight = 1
-let g:cpp_experimental_template_highlight = 1
-let g:cpp_concepts_highlight = 1
-let g:cpp_no_function_highlight = 1
+" let g:cpp_class_scope_highlight = 1
+" let g:cpp_member_variable_highlight = 1
+" let g:cpp_class_decl_highlight = 1
+" let g:cpp_posix_standard = 1
+" let g:cpp_experimental_simple_template_highlight = 1
+" let g:cpp_experimental_template_highlight = 1
+" let g:cpp_concepts_highlight = 1
+" let g:cpp_no_function_highlight = 1
 
 " open new split panes to right and below
 set splitright
@@ -147,7 +149,10 @@ nnoremap <C-l> <C-w>l
 
 " Key Mapping
 nnoremap <C-s> :w <CR>
-nnoremap <C-b> :!./script/run.sh % <CR>
-nnoremap <C-m> :!glow todo.md <CR>
+nnoremap <C-b> :!
 nnoremap <C-n> :NERDTreeToggle <CR>
 nnoremap <C-f> :Files <CR>
+
+" terminal Mapping
+tnoremap <C-x> <C-\><C-n>
+nnoremap <C-t> :vsplit term://bash <CR>
